@@ -12,7 +12,7 @@ function App() {
         </p>
         <a
           className="App-link"
-          href="https://gibhub.com/xatkx"
+          href="https://github.com/xatkx"
           target="_blank"
           rel="noopener noreferrer"
         >
