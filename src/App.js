@@ -1,26 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-         soy  el mejor
-        </p>
-        <a
-          className="App-link"
-          href="https://github.com/xatkx"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          github
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  
+  render(){
+    return(
+      <div class="container">
+        <h1>hola mundo</h1>
+      </div>
+    )
+  }
 }
 
 export default App;
