@@ -9,9 +9,13 @@ class Galery extends Component {
         }
     }
     render(){
-        console.log(this.props.result)
+        
         return (
-            <div></div>
+            <React.Fragment>
+                <div className='row'>
+                    {'RECORDATORIO: create un componente para recorrer la busqueda de imagenes PENDIENTE'}
+                </div>
+            </React.Fragment>
         )
     }
 }

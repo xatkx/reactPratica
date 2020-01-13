@@ -7,10 +7,10 @@ class Search extends Component {
     // metodos
     handleSubmit = event => {
         event.preventDefault();
-
         const { 
             value 
         } = this.searchRef.current
+
         if(value !== '')
         {
             this.props.userSearch(value);
