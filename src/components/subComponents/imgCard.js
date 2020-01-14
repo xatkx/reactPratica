@@ -12,8 +12,8 @@ class Pic extends Component {
 
                         <div class="card-body">
                             <h5 class="card-title">{pic.tags}</h5>
-                            <p class="card-text">of the card's content.</p>
-                            <a href={pic.largeImageURL} class="btn btn-block btn-info" target="_blank" rel="noopener noreferrer">Pic</a>
+                            <p class="card-text">edwlin es un mmg</p>
+                            <a href={pic.largeImageURL} class="btn btn-block btn-info" target="_blank" rel="noopener noreferrer">Pic full</a>
                         </div>
                 </div>
         )

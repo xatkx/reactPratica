@@ -32,7 +32,7 @@ constructor(props){
     this.setState({
       search: search
     },
-      () => {
+      () => { 
         this.pixabyAPI()
       }
     )
