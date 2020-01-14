@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Pic from './subComponents/imgCard'
 
 class Galery extends Component {
     constructor(props){
@@ -9,11 +10,14 @@ class Galery extends Component {
         }
     }
     render(){
+        console.log(this.props.result)
         
         return (
             <React.Fragment>
                 <div className='row'>
-                    {'RECORDATORIO: create un componente para recorrer la busqueda de imagenes PENDIENTE'}
+                    {this.props.result.map(img => {
+                        return <Pic key={img.id+1} pic={img} />
+                    })}
                 </div>
             </React.Fragment>
         )
