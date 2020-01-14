@@ -43,14 +43,17 @@ constructor(props){
 
   render(){
     return(
+      <React.Fragment>
       <div className="container">
         <div className="jumbotron">
           <Search userSearch={this.userSearch} />
           <p className='lead text-center' >Galeria de la API de pixabay</p>
         </div>
           {this.state.search}
-          <Galery result={this.state.result}/>
+          <Galery  result={this.state.result}/>
       </div>
+        
+      </React.Fragment>
     )
   }
 }
