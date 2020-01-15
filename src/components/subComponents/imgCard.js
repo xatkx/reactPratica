@@ -12,7 +12,7 @@ class Pic extends Component {
 
                         <div class="card-body">
                             <h5 class="card-title">{pic.tags}</h5>
-                            <p class="card-text">edwlin es un mmg</p>
+                            <p class="card-text">edwalin y brandor son unos mmg</p>
                             <a href={pic.largeImageURL} class="btn btn-block btn-info" target="_blank" rel="noopener noreferrer">Pic full</a>
                         </div>
                 </div>
