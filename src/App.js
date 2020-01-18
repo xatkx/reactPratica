@@ -17,8 +17,8 @@ constructor(props){
 
 
   pixabyAPI = () => {
-    const perPage = 30;
-    let api = `https://pixabay.com/api/?key=14901812-5f44c61e4696aa53c5c4721f5&q=${this.state.search}&image_type=photo&per_page=${perPage}`
+    const perPage = 28;
+    let api = `https://pixabay.com/api/?key=14901812-5f44c61e4696aa53c5c4721f5&q=${this.state.search}&per_page=${perPage}`
 
     fetch(api)
       .then(rearch => rearch.json())

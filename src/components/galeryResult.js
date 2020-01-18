@@ -10,6 +10,7 @@ class Galery extends Component {
         }
     }
     render(){
+
         console.log(this.props.result)
         
         return (
