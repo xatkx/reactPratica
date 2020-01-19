@@ -12,7 +12,7 @@ class Filter extends Component {
                     <option value='travel'>travel</option>
                     <option value='transportation'>transportation</option>
                     <option value='sports'>sports</option>
-                    <option value='sports'>computer</option>
+                    <option value='computer'>computer</option>
                     <option>food</option>
                     <option>industry</option>
                     <option>animals</option>
