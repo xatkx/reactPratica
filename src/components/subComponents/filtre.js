@@ -11,8 +11,8 @@ class Filter extends Component {
                     <option value='buildings'>buildings</option>
                     <option value='travel'>travel</option>
                     <option value='transportation'>transportation</option>
-                    <option>sports</option>
-                    <option>computer</option>
+                    <option value='sports'>sports</option>
+                    <option value='sports'>computer</option>
                     <option>food</option>
                     <option>industry</option>
                     <option>animals</option>
