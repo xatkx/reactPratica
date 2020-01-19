@@ -2,15 +2,15 @@ import React, { Component } from 'react';
   
 class Filter extends Component {
     render(){
-        // grupo de filtros de la api pixabay ej: categoria, color, with,height ect
+        // grupo de filtros de la api pixabay ej: categoria, color, with,height ect 
         return (
-            <div>
-                Filter:<select className='form-control form-control-sm form-control-plaintext' name='filter'>
+            <div>          
+        Filter:<select ref={this.props.filterRef} className='form-control form-control-sm form-control-plaintext' name='filter'>
                     <option value='music'>music</option>
                     <option value='business'>business</option>
                     <option value='buildings'>buildings</option>
                     <option value='travel'>travel</option>
-                    <option>transportation</option>
+                    <option value='transportation'>transportation</option>
                     <option>sports</option>
                     <option>computer</option>
                     <option>food</option>
@@ -31,5 +31,4 @@ class Filter extends Component {
         )
     }
 }
-
 export default Filter

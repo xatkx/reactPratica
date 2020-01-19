@@ -11,6 +11,7 @@ constructor(props){
 
   this.state = {
     search: '',
+    filter: '',
     result: []
   }
 }
@@ -18,7 +19,8 @@ constructor(props){
 
   pixabyAPI = () => {
     const perPage = 28;
-    let api = `https://pixabay.com/api/?key=14901812-5f44c61e4696aa53c5c4721f5&q=${this.state.search}&per_page=${perPage}`
+    const category = this.state.filter;
+    let api = `https://pixabay.com/api/?key=14901812-5f44c61e4696aa53c5c4721f5&q=${this.state.search}&per_page=${perPage}&category=${category}`
 
     fetch(api)
       .then(rearch => rearch.json())
@@ -28,9 +30,10 @@ constructor(props){
 
   }
 
-  userSearch = search => {
+  userSearch = (search,filter) => {
     this.setState({
-      search: search
+      search: search,
+      filter: filter
     },
       () => {
         this.pixabyAPI()
@@ -46,7 +49,7 @@ constructor(props){
       <React.Fragment>
       <div className="container">
         <div className="jumbotron">
-          <p class Name="lead text-center">kedwin ramirez user github: <a rel="noopener noreferrer" href="http://www.github.com/xatkx" target="_blank"  className="btn btn-secondary">xatkx</a></p>
+          <p className="lead text-center">kedwin ramirez user github: <a rel="noopener noreferrer" href="http://www.github.com/xatkx" target="_blank"  className="btn btn-secondary">xatkx</a></p>
           <Search userSearch={this.userSearch} />
           <p className='lead text-center' >Galeria de la API de pixabay</p>
         </div>

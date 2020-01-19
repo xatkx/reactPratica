@@ -7,8 +7,15 @@ import Filter from './subComponents/filtre'
 class Search extends Component {
 
     searchRef = React.createRef();
+    filterRef = React.createRef();
 
     // metodos
+    handlerFilter = e => {
+        let { value } = this.filterRef.current;
+        if(value !== ''){
+            return value
+        }
+    }
     handleSubmit = event => {
         event.preventDefault();
         const { 
@@ -17,7 +24,8 @@ class Search extends Component {
 
         if(value !== '')
         {
-            this.props.userSearch(value);
+            let filter = this.handlerFilter()
+            this.props.userSearch(value,filter);
         }
         
     }
@@ -28,7 +36,7 @@ class Search extends Component {
                 <div className='row'>
 
                     <div className='col-md-3'>
-                        <Filter />
+                        <Filter filterRef={this.filterRef} />
                     </div>
                     
                    <div className='col-md-10 form-group'>
