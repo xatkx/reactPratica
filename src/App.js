@@ -70,7 +70,7 @@ constructor(props){
     this.setState({
       search: search
     },
-      () => { 
+      () => {
         this.pixabyAPI()
       }
     )
@@ -84,6 +84,8 @@ constructor(props){
       <React.Fragment>
       <div className="container">
         <div className="jumbotron scroll">
+        <p class Name="lead text-center">kedwin ramirez user github: <a rel="noopener noreferrer" href="http://www.github.com/xatkx" target="_blank"  className="btn btn-secondary">xatkx</a></p>
+
           <Search userSearch={this.userSearch} />
           <p className='lead text-center' >Galeria de la API de pixabay</p>
         </div>

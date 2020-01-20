@@ -13,8 +13,13 @@ class Galery extends Component {
     }
     render(){
 
+<<<<<<< HEAD
         if (this.props.result.lenght === 0) return null
 
+=======
+        console.log(this.props.result)
+        
+>>>>>>> 128bb1d754a057456b6e79468f19c3d61fbb2070
         return (
             <React.Fragment>
                 <div className='row'>
