@@ -11,10 +11,11 @@ class Galery extends Component {
             fotos: []
         }
     }
+    
     render(){
-
-        if (this.props.result.lenght === 0) return null
+        
         return (
+
             <React.Fragment>
                 <div className='row'>
                     {this.props.result.map(img => {
