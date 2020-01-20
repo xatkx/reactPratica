@@ -11,14 +11,52 @@ constructor(props){
 
   this.state = {
     search: '',
+    numPag: 1,
     result: []
   }
 }
+  scroll = () => {
+    const galery = document.querySelector('.scroll')
+    galery.scrollIntoView('smooth','start') 
+  }
+
+  paginacion = (btn) => {
+    
+    let {numPag} = this.state
+
+    if (btn === 'siguiente' && !( numPag > 50))
+    {
+      numPag += 1;
+      this.setState({
+        numPag:numPag
+      },
+      () => {
+        this.pixabyAPI();
+        this.scroll();
+      })
+    }
+    else if(btn === 'anterior' && !(numPag <= 1))
+    {
+      numPag -= 1;
+      
+      this.setState({
+      numPag:numPag
+    },
+    () => {
+      this.pixabyAPI();
+      this.scroll();
+    })
+    }
+
+    
+    
+  }
 
 
   pixabyAPI = () => {
     const perPage = 30;
-    let api = `https://pixabay.com/api/?key=14901812-5f44c61e4696aa53c5c4721f5&q=${this.state.search}&image_type=photo&per_page=${perPage}`
+    const {search, numPag} = this.state
+    let api = `https://pixabay.com/api/?key=14901812-5f44c61e4696aa53c5c4721f5&q=${search}&image_type=photo&per_page=${perPage}&page=${numPag}`
 
     fetch(api)
       .then(rearch => rearch.json())
@@ -45,12 +83,12 @@ constructor(props){
     return(
       <React.Fragment>
       <div className="container">
-        <div className="jumbotron">
+        <div className="jumbotron scroll">
           <Search userSearch={this.userSearch} />
           <p className='lead text-center' >Galeria de la API de pixabay</p>
         </div>
           {this.state.search}
-          <Galery  result={this.state.result}/>
+          <Galery paginacion={this.paginacion}  result={this.state.result}/>
       </div>
         
       </React.Fragment>
