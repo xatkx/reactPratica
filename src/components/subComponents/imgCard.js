@@ -2,18 +2,18 @@ import React, { Component } from 'react';
 
 class Pic extends Component {
     render(){
-        const pic = this.props.pic
-        console.log(pic)
+        const {id, previewURL, likes, views, tags, largeImageURL} = this.props.pic
 
         return(
-            <div class="card col-md-3"  key={pic.id}>
+            <div className="card col"  key={id}>
 
-                <img src={pic.previewURL} class="card-img-top" alt="..." />
+                <img src={previewURL} className="card-img-top" alt={tags} />
 
-                        <div class="card-body">
-                            <h5 class="card-title">{pic.tags}</h5>
-                            <p class="card-text">edwalin y brandor son unos mmg</p>
-                            <a href={pic.largeImageURL} class="btn btn-block btn-info" target="_blank" rel="noopener noreferrer">Pic full</a>
+                        <div className="card-body">
+                            <h5 className="card-title">{tags}</h5>
+                            <p className="card-text">likes: {likes}</p>
+                            <p className="card-text">views: {views}</p>
+                            <a href={largeImageURL} className="btn btn-block btn-info" target="_blank" rel="noopener noreferrer">full</a>
                         </div>
                 </div>
         )

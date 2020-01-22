@@ -12,15 +12,46 @@ constructor(props){
   this.state = {
     search: '',
     filter: '',
+    perPage: 12,
+    page:1,
     result: []
   }
-}
 
+}
+  scrollUp = () => {
+    const galery = document.querySelector('.scrollup')
+
+    galery.scrollIntoView('smooth','start')
+  }
+
+  paginacion = (value) => {
+
+    let { page } = this.state;
+
+    if(value === 'siguiente' && page < 50)
+    {
+      page += 1;
+      this.setState({
+        page:page
+      },this.pixabyAPI())
+    } else if(value === 'anterior' && page > 1)
+    {
+      page -= 1;
+      this.setState({
+        page:page
+      },this.pixabyAPI())
+    }else{
+      this.scrollUp()
+    }
+    
+    console.log(page)
+
+  }
 
   pixabyAPI = () => {
-    const perPage = 28;
-    const category = this.state.filter;
-    let api = `https://pixabay.com/api/?key=14901812-5f44c61e4696aa53c5c4721f5&q=${this.state.search}&per_page=${perPage}&category=${category}`
+    
+    const {filter, search, perPage, page} = this.state;
+    let api = `https://pixabay.com/api/?key=14901812-5f44c61e4696aa53c5c4721f5&q=${search}&per_page=${perPage}&category=${filter}&page=${page}`
 
     fetch(api)
       .then(rearch => rearch.json())
@@ -48,13 +79,13 @@ constructor(props){
     return(
       <React.Fragment>
       <div className="container">
-        <div className="jumbotron">
+        <div className="jumbotron scrollup">
           <p className="lead text-center">kedwin ramirez user github: <a rel="noopener noreferrer" href="http://www.github.com/xatkx" target="_blank"  className="btn btn-secondary">xatkx</a></p>
           <Search userSearch={this.userSearch} />
           <p className='lead text-center' >Galeria de la API de pixabay</p>
         </div>
           {this.state.search}
-          <Galery  result={this.state.result}/>
+          <Galery paginacion={this.paginacion} result={this.state.result}/>
       </div>
         
       </React.Fragment>

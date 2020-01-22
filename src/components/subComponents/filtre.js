@@ -5,7 +5,7 @@ class Filter extends Component {
         // grupo de filtros de la api pixabay ej: categoria, color, with,height ect 
         return (
             <div>          
-        Filter:<select ref={this.props.filterRef} className='form-control form-control-sm form-control-plaintext' name='filter'>
+        Filter:<select ref={this.props.filterRef} defaultValue='' className='form-control form-control-sm form-control-plaintext' name='filter'>
                     <option value='music'>music</option>
                     <option value='business'>business</option>
                     <option value='buildings'>buildings</option>
@@ -26,6 +26,7 @@ class Filter extends Component {
                     <option>backgrounds</option>
                     <option>nature</option>
                     <option>fashion</option>
+                    <option value='' >all</option>
                 </select>
             </div>
         )
